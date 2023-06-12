@@ -1,7 +1,7 @@
 
 
 
-//             Scope Functions , infix function , Extension Function , Default Function
+//             Scope Functions , infix function , Extension Function , Default Function ,Singletons
 fun main() {
     infixFun()
     var n:String = "Hello"
@@ -65,18 +65,15 @@ fun uselet(){                      //  let function return "lambda result" and c
 
 }
 // 5. run
-fun useRun(){                         //combination of let and with
+fun useRun(){                         //combination of let and with = run
     var h:Humans? = null
     h?.run {
         name = "Arjun"
     }
-
+    var l = listOf<Int>(1,2,3,4)
+    l.forEach{println(it)}
 
 }
-
-
-
-
 //                 Infix
 fun infixFun(){
     var c = Number("1")
@@ -86,12 +83,46 @@ fun infixFun(){
     println(total)
 }
 class Number(var a: String ) {
+    var j : String = "sd"
     operator infix fun plus(n: Number): String {
         return this.a + n.a
     }
+
 }
 
 //              Extension Function
 fun String.add(i:String):String{
     return this+i;
+}
+
+//                Singletons
+object User{             //we don't have to create instance internally the instance was created
+    var id:Int = 1;      //Behaves like static var
+    fun printing(){         //Behaves like static method
+        println(id)
+    }
+}
+class Test{
+    fun testing(){
+        User.id
+
+        B.S1.toString()
+
+    }
+}
+//                 Companion object
+class S {
+     object w{         //we don't have to create instance internally the instance was created
+        var id: Int = 1;      // static var
+        fun printing() {       // static method
+            println(id)
+        }
+    }
+
+}
+class B{
+    object S1{
+
+
+    }
 }

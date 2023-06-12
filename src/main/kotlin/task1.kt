@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     var eligible = if (age > 20) true else false;  //Boolean with conditional logic
     var salaryIncrement = if (eligible) salary + 10000 else salary
     println(salaryIncrement)
-    when (age) {
+   when (age) {
         in 20..50 -> "eligible"
         else -> "Not Eligible"
     }
@@ -59,6 +59,7 @@ fun printing(x: ArrayList<Int>): Unit {  //Printing fun parameters as ArrayList 
         println(x[i])
         i++
     }
+
 }
 
 fun multiply(x: ArrayList<Int>): ArrayList<Int> =
